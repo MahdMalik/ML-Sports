@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Android;
 
-public class CameraScript : MonoBehaviour
+public class Camera : MonoBehaviour
 {
     public WebCamTexture webcam;
     bool hasWebcam;
@@ -77,7 +77,7 @@ public class CameraScript : MonoBehaviour
                 //it uses a flattened array
                 Color32[] thePixels = webcam.GetPixels32();
                 Color32 centerPixel = thePixels[webcam.width / 2 + (webcam.width * webcam.height / 2)];
-                Debug.Log($"The center pixel color is: {centerPixel}");
+                // Debug.Log($"The center pixel color is: {centerPixel}");
             }
         }
     }
