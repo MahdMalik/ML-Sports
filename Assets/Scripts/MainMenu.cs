@@ -3,13 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuScript : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-    public GameObject menuScreen;
-    public GameObject creditScreen;
-    public GameObject gameScreen;
+    private GameObject menuScreen;
+    private GameObject creditScreen;
+    private GameObject gameScreen;
 
-    void Start()
+    [SerializeField]
+    private BaseballGame game;
+
+    void Awake()
+    {
+        menuScreen = transform.Find("MainMenu").gameObject;
+        creditScreen = transform.Find("Credits").gameObject;
+        gameScreen = transform.Find("Games").gameObject;
+    }
+
+    void OnEnable()
     {
         menuScreen.SetActive(true);
         creditScreen.SetActive(false);
@@ -38,6 +48,10 @@ public class MainMenuScript : MonoBehaviour
     public void StartBaseballGame()
     {
         gameScreen.SetActive(false);
+        //set the entire UI inactive
+        gameScreen.transform.parent.gameObject.SetActive(false);
+        game.gameObject.SetActive(true);
         Debug.Log("GAME STARTING!");
     }
+    
 }
