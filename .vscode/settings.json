@@ -17,7 +17,7 @@
         "**/*.wav": false,
         "**/*.gif": false,
         "**/*.ico": true,
-        "**/*.jpg": true,
+        "**/*.jpg": false,
         "**/*.jpeg": true,
         "**/*.png": false,
         "**/*.psd": true,
